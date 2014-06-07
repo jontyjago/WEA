@@ -1,0 +1,493 @@
+/*
+Theme Name: WEA 
+Author: Jonathan Evans
+Author URI: http://www.jontyjago.com
+Description: Custom Theme built for WEA Branches. Allows full customisation of courses, tutors and venues.
+Version: 1.2
+Template: twentytwelve
+Template Version: 1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwelve
+
+*/
+
+/*
+Version History
+Version 1.0:    Original version
+Version 1.1:    Flattened the buttons out. Colour Swatch taken from here: http://designmodo.github.io/Flat-UI/
+Version 1.2:    Added editable text for quick link boxes on home page
+*/
+
+/* =Notes
+--------------------------------------------------------------
+This stylesheet uses rem values with a pixel fallback. The rem
+values (and line heights) are calculated using two variables:
+
+$rembase:     14;
+$line-height: 24;
+
+---------- Examples
+
+* Use a pixel value with a rem fallback for font-size, padding, margins, etc.
+	padding: 5px 0;
+	padding: 0.357142857rem 0; (5 / $rembase)
+
+* Set a font-size and then set a line-height based on the font-size
+	font-size: 16px
+	font-size: 1.142857143rem; (16 / $rembase)
+	line-height: 1.5; ($line-height / 16)
+
+---------- Vertical spacing
+
+Vertical spacing between most elements should use 24px or 48px
+to maintain vertical rhythm:
+
+.my-new-div {
+	margin: 24px 0;
+	margin: 1.714285714rem 0; ( 24 / $rembase )
+}
+
+---------- Further reading
+
+http://snook.ca/archives/html_and_css/font-size-with-rem
+http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
+
+-------------------------------------------------------------- */
+
+/* import the parent stylesheet */
+
+@import url("../twentytwelve/style.css");
+
+body {
+    background-color: #ECF0F1;
+}
+body .site {
+    margin-top: 10px;
+    margin-top: 0.714rem;
+    margin-bottom: 20px;
+    margin-bottom: 1.428;;
+    border-radius: 0.2em;
+    box-shadow: 0 0 0;
+}
+.site-header {
+    padding: 1.42857rem 0 1.1428rem 0;
+    padding: 24px 0 16px 0;
+}
+/* ---------------------------------------------------------------------- */
+/*  Headers & Paras
+/* ---------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Lato, 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+h2 {
+    font-size: 1.57142rem;
+    font-size: 22px;
+    line-height: 2rem;
+    line-height: 28px;
+    margin-bottom: 0.7142rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.28571px;
+    letter-spacing: 4px;
+}
+p {
+    font-family: Lato, 'Open Sans', sans-serif;
+    font-size: 1.142rem;
+    font-size: 16px;
+    line-height: 1.5rem;
+    line-height: 24px;
+}
+a:hover {
+    color:  #E67E22;
+}
+/* ---------------------------------------------------------------------- */
+/*  Header
+/* ---------------------------------------------------------------------- */
+#logo {
+    float: left;
+}
+#contact {
+    float: right;
+    text-align: right;
+    line-height: 1.4285rem;
+    line-height: 20px;
+    color: #555;
+}
+#contact h4 {
+    font-size: 1rem;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Lato, 'PT Sans', 'Open Sans', Helvetica, sans-serif;
+}
+#contact p {
+    font-size: 1rem;
+    font-size: 14px;
+}
+/* ---------------------------------------------------------------------- */
+/* Menu Items
+/* ---------------------------------------------------------------------- */
+.main-navigation li {
+    font-size: 1.14285rem;
+    font-size: 16px;
+    line-height: 1.7142rem;
+    line-height: 24px;
+    margin-top: 0.14285rem;
+    margin-top: 2px;
+}
+.main-navigation li a:hover {
+    color: #E67E22;
+}
+.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {
+    border-bottom: solid #E67E22;
+    border-top: solid #E67E22;
+    border-bottom-width: 0.0714rem;
+    border-bottom-width: 1px;
+    border-top-width: 0.0714rem;
+    border-top-width: 1px;
+    margin-top: 0.42857rem;
+    margin-top: 6px;
+}
+.main-navigation li a {
+    line-height: 2.71428rem;
+    line-height: 38px;
+}
+/* ---------------------------------------------------------------------- */
+/* Page Columns
+/* ---------------------------------------------------------------------- */
+.leftcol {
+    float: left;
+    border-right: solid #E67E22;
+    border-right-width: 0.0714rem;
+    border-right-width: 1px;
+    padding-right: 1rem;
+    padding-right: 14px;
+    width: 45.01742rem;
+    width: 631px;
+}
+.rightcol {
+    float: right;
+    width: 21.42857rem ;
+    width: 300px;
+    padding-left: 1rem;
+    padding-left: 14px
+}
+/* ---------------------------------------------------------------------- */
+/*  Home Page Content
+/* ---------------------------------------------------------------------- */
+#home-text img {
+    float: left;
+    margin: 0.28571rem 0.57142rem 0.28571rem 0.1428rem;
+    margin: 4px 8px 4px 2px;
+    padding: 0.1428rem;
+    padding: 2px;
+    border: solid #E67E22;
+    border-width: 0.0714rem;
+    border-width: 1px;
+}
+#stop-press,
+#enrol,
+#home-text {
+    border-bottom: solid #E67E22;
+    border-bottom-width: 0.0714rem;
+    border-bottom-width: 1px;
+    padding-bottom: 0.57142rem;
+    padding-bottom: 8px;
+    margin-bottom: 0.57142rem;
+    margin-bottom: 8px;
+}
+#enrol {
+    position: relative;
+}
+#enrol a {
+    position: relative;
+    left: 20%;
+    margin: 0.57142rem;
+    margin: 8px;
+}
+/* ---------------------------------------------------------------------- */
+/* Content
+/* ---------------------------------------------------------------------- */
+.site-content {
+    margin: 0.5rem 0 0;
+}
+.site-content article {
+    border-bottom: 1px solid #2ECC71;
+    margin-bottom: 20px;
+}
+.entry-content p {
+    line-height: 1.5rem;
+    line-height: 24px;
+    margin-top: 10px;
+}
+.entry-title, 
+.entry-title a {
+    font-size: 20px;
+}
+.entry-title a {
+    font-size: 20px;
+    margin-bottom: 6px;
+    text-decoration: none;
+}
+.entry-title h1 {
+    margin-bottom: 6px;
+}
+.course-footer {
+    border: 1px solid #E67E22;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #eee;
+    margin-top: 12px;
+}
+.course-footer p {
+    margin: 2px 0;
+    line-height: 20px;
+}
+.season-title {
+   margin-bottom: 18px;
+}
+.season-title h4 {
+   font-size: 16px;
+   font-weight: 100;
+}
+#season-viewing {
+    margin-bottom: 10px;
+    padding: 6px 0;
+}
+#season-viewing h3 {
+    color: #333; 
+    font-size: 15Zzpx;
+    font-weight: 400;   
+}
+.course-meta {
+    border-bottom: 1px dotted #E67E22;
+    border-top: 1px dotted #E67E22;
+    color: #333333;
+    padding: 6px 0;
+}
+.meta-title {
+    border-right: 1px dotted #2ECC71;
+    float: left;
+    margin-right: 4px;
+    text-align: left;
+    width: 100px;
+}
+.meta-entry {
+    margin-left: 4px;
+    width: 620px;
+}
+.meta-entry,
+.meta-title {
+    line-height: 18px;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+.course-name {
+    font-size: 16px;
+}
+/*************/
+/*Home Grid*/
+/*************/
+.hp-grid {
+    padding: 0 16px;
+}
+.hp-grid h2 {
+    color: #2C3E50;
+    padding-top: 0.2em;
+    text-align: center;
+}
+.hp-grid p {
+    color: #34495E;
+    padding: 0.1428571rem;
+    padding: 2px;
+    text-align: center;
+    height: 50px;
+}
+.hp-grid .top,
+.hp-grid .bottom {
+    height: 186px;
+    width: 600px;
+}
+.hp-grid .top {
+    margin-top: 10px;
+}
+.hp-grid .left,
+.hp-grid .right {
+    border-radius: .2em;
+    width: 280px;
+    height: 164px;
+}
+.hp-grid .left {
+    float: left;
+}
+.hp-grid .right {
+    float: right;
+}
+.grid-btn{
+    position: relative;
+}
+.grid-btn a {
+    margin: 8px;
+    position: relative;
+    width: 182px;
+}
+/*************/
+/*Sidebar*/
+/*************/
+.button {
+    -moz-border-radius: .2em;
+    -webkit-border-radius: .2em;
+    border-radius: .2em;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Lato, 'Open Sans', Helvetica, sans-serif;
+    font-size: 1.4285rem;
+    font-size: 20px;
+    outline: none;
+    padding: .5em 2em .55em;
+    text-align: center;
+    text-decoration: none;
+}
+.button:hover {
+    color: #2C3E50;
+    text-decoration: none;
+}
+.button:active {
+    position: relative;
+    top: 1px;
+}
+.emerald {
+    background: #2ECC71;
+    color: #FFF;
+}
+.carrot {
+    background: #E67E22;
+    color: #FFF;
+}
+.clouds {
+    background-color: #ECF0F1;
+}
+.side-list {
+    border-radius: 0.2em;
+    line-height: 22px;
+    padding: 6px;
+}
+.side-list ul {
+    margin-left: 10px;
+}
+.side-list ul a {
+    text-decoration: none;
+}
+.side-sublist {
+    list-style: inside;
+    margin-left: 8px;
+}
+/* ---------------------------------------------------------------------- */
+/* Footer
+/* ---------------------------------------------------------------------- */
+footer[role="contentinfo"] {
+    border-top-color: #2ECC71;
+    font-size: 1rem;
+}
+.wrapper .one-fourth {
+    border-right-width: 0.0714rem;
+    border-right-width: 1px;
+    border-right: solid #E67E22;
+}
+.wrapper .last {
+    border-right: none;
+}
+.one-fourth ul{
+    list-style: inside;
+}
+.one-fourth li {
+    font-size: 14px;
+    line-height: 20px;
+}
+.one-fourth li a{
+    text-decoration: none;
+    color: #555;
+}
+#contact-foot {
+    color: #555;
+    line-height: 1.4285rem;
+    line-height: 20px;
+    text-align: left;
+}
+#contact-foot h4 {
+    font-size: 1rem;
+    font-size: 14px;
+    font-weight: bold;
+}
+#contact-foot p {
+    font-size: 1rem;
+    font-size: 14px;
+    line-height: 20px;
+}
+.copy {
+    color: #555;
+}
+.copy p {
+    font-size: 14px;
+    line-height: 20px;
+}
+/* ---------------------------------------------------------------------- */
+/*  Custom Grid for shortcodes
+/* ---------------------------------------------------------------------- */
+
+.wrapper .one-half,
+.wrapper .one-third,
+.wrapper .one-fourth,
+.wrapper .two-thirds,
+.wrapper .three-fourths {
+    float:left;
+    margin-right:20px;
+}
+.wrapper .one-half.last,
+.wrapper .one-third.last,
+.wrapper .one-fourth.last,
+.wrapper .two-thirds.last,
+.wrapper .three-fourths.last {
+    margin-right:0;
+}
+.wrapper .one-half       { width:460px; }
+.wrapper .one-third      { width:300px; }
+.wrapper .one-fourth     { width:220px; }
+.wrapper .two-thirds     { width:620px; }
+.wrapper .three-fourths  { width:700px; }
+/* ------------------------------------------- */
+/*  Responsive Grid -
+/*      1. Tablet
+/*      2. Mobile Portrait
+/*      3. Mobile Landscape
+/* ------------------------------------------- */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .wrapper                 { width:748px; }
+    .wrapper .one-half       { width:364px; }
+    .wrapper .one-third      { width:236px; }
+    .wrapper .one-fourth     { width:172px; }
+    .wrapper .two-thirds     { width:492px; }
+    .wrapper .three-fourths  { width:508px; }
+}
+@media only screen and (max-width: 767px) {
+    .wrapper       { width:300px; }
+    .wrapper .one-half,
+    .wrapper .one-third,
+    .wrapper .one-fourth,
+    .wrapper .two-thirds,
+    .wrapper .three-fourths { width:300px; margin-right:0; }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .wrapper       { width:420px; }
+    .wrapper .one-half,
+    .wrapper .one-third,
+    .wrapper .one-fourth,
+    .wrapper .two-thirds,
+    .wrapper .three-fourths { width:420px; margin-right:0; }
+}
+

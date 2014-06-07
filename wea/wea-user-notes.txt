@@ -1,0 +1,26 @@
+/******
+Initial Setup
+******/
+1. Log into WEA Dorchester Dashboard - http://www.wea-dorchester.co.uk/wp-admin, user wea-admin password weadorchester2013
+2. On the dashboard page ensure the WEA Dorchester Theme is active. If not go to Appearance / Themes and activate the WEA Dorchester theme.
+3. Go to WEA Options menu using the link at the bottom of the page.
+4. Fill in the Homepage Title and Homepage Text fields and click Save.
+5. Fill in the Contact Phone Number and Email fields and click Save.
+6. If needed, fill in the Stop Press and Regional Office Phone and click Save.
+/******
+Adding a course
+******/
+1. Select Course / Add New
+2. Fill in Title / Details
+3. Leave SEO details as they are, they're generated automatically
+4. Fill in course-specific details, if it's a day course, leave end date blank
+5. Select ONE Course season
+6. Save as Draft - use Preview button to make sure it all looks OK - return to Edit screen and Publish
+/******
+Adding tutors and venues
+******/
+1. Select Tutor or Venue / Add New
+2. Fill in Title / Details
+3. Leave SEO details as they are, they're generated automatically
+4. For Venues only - use MapPress to add the Google Map - Add POI allows you to add the address
+5. Save as Draft - use Preview button to make sure it all looks OK - return to Edit screen and Publish
