@@ -37,7 +37,7 @@ get_header(); ?>
 			twentytwelve_content_nav( 'nav-below' );
 
 		else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'venue', 'none' ); ?>
 		<?php endif; ?>
 
 		</div><!-- #content -->

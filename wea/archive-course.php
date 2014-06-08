@@ -22,7 +22,6 @@ get_header(); ?>
 	<section id="primary" class="site-content">
 		<div id="content" role="main">
 		
-		<h2>Our Courses</h2>
 		<?php
 		 $args = array(
    			'post_type' => 'course',
@@ -32,7 +31,9 @@ get_header(); ?>
  		);
  		$query = new WP_Query($args);
 
-		if ( $query -> have_posts() ) : 
+		if ( $query -> have_posts() ) : ?>
+			<h2>Our Courses</h2>
+			<?php 
 			/* Start the Loop */
 			while ( $query -> have_posts() ) : $query -> the_post();
 
@@ -47,7 +48,7 @@ get_header(); ?>
 			twentytwelve_content_nav( 'nav-below' );
 
 		else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'course', 'none' ); ?>
 		<?php endif; ?>
 
 		</div><!-- #content -->
