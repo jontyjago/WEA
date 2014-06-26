@@ -15,7 +15,7 @@
     <div class="side-list clouds">
     <h2>Quick Links</h2>
     <ul>
-    <li><a href="<?php echo site_url() ?>/course/">All Courses</a></li>
+    <li><a href="<?php echo site_url() ?>/status/current">Current Courses</a></li>
         <ul class="side-sublist">
             <?php
                 // Loop through the taxonomy terms - empty terms by default
@@ -24,10 +24,11 @@
                 $count = count($terms);
                     if ( $count > 0 ){
                         foreach ( $terms as $term ) {
-                            echo "<li><a href='" . site_url() . "/course_season/" . $term->slug . "'>" . $term->name . "</a></li>";
+                            echo "<li><a href='" . site_url() . "/season/" . $term->slug . "'>" . $term->name . "</a></li>";
                 }
             } ?>
         </ul>
+    <li><a href="<?php echo site_url() ?>/status/archived/">Past Courses</a></li>
     <li><a href="<?php echo site_url() ?>/venue/">Venues</a></li>
     <li><a href="<?php echo site_url() ?>/tutor/">Tutors</a></li>
     <li><a href="http://wea.org.uk/">WEA National</a></li>

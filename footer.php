@@ -26,10 +26,10 @@ if ( strlen( get_option( 'regional-phone' ) )!=0 ) {?> <p>Regional Phone: <?php 
 	    <div class="one-fourth">
 	    <ul>
             <li><a href="<?php echo site_url() ?>/course/">All Courses</a></li>
-            <li><a href="<?php echo site_url() ?>/course_season/day-courses/">Day Courses</a></li>
-            <li><a href="<?php echo site_url() ?>/course_season/autumn/">Autumn</a></li>
-            <li><a href="<?php echo site_url() ?>/course_season/spring/">Spring</a></li>
-            <li><a href="<?php echo site_url() ?>/course_season/multi-week-courses/">Multi-Week</a></li>
+            <li><a href="<?php echo site_url() ?>/season/day-courses/">Day Courses</a></li>
+            <li><a href="<?php echo site_url() ?>/season/autumn/">Autumn</a></li>
+            <li><a href="<?php echo site_url() ?>/season/spring/">Spring</a></li>
+            <li><a href="<?php echo site_url() ?>/season/multi-week-courses/">Multi-Week</a></li>
         </ul>
 	    </div><!-- #one-fourth -->
 	    <div class="one-fourth">
