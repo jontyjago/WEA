@@ -8,14 +8,16 @@
  */
 
 //Get the custom data
-$course_code = get_post_meta(get_the_id(), 'course_code', true);
-$course_tutor = get_post_meta(get_the_id(), 'course_tutor', true);
-$course_tutor_url = get_post_meta(get_the_id(), 'course_tutor_url', true);
-$course_venue = get_post_meta(get_the_id(), 'course_venue', true);
-$course_venue_url = get_post_meta(get_the_id(), 'course_venue_url', true);
-$course_start = date('l d/m/Y', get_post_meta(get_the_id(), 'course_start_date', true));
-$course_end = date('l d/m/Y', get_post_meta(get_the_id(), 'course_end_date', true));
-$course_info = get_post_meta(get_the_id(), 'course_info', true);
+$course_code 		= get_post_meta(get_the_id(), 'course_code', true);
+$course_tutor 		= get_post_meta(get_the_id(), 'course_tutor', true);
+$course_tutor_url 	= get_post_meta(get_the_id(), 'course_tutor_url', true);
+$course_venue 		= get_post_meta(get_the_id(), 'course_venue', true);
+$course_venue_url 	= get_post_meta(get_the_id(), 'course_venue_url', true);
+$course_start 		= date('l d/m/Y', get_post_meta(get_the_id(), 'course_start_date', true));
+$course_end 		= date('l d/m/Y', get_post_meta(get_the_id(), 'course_end_date', true));
+$course_sessions 	= get_post_meta(get_the_id(), 'course_sessions', true);
+$session_length		= get_post_meta(get_the_id(), 'session_length', true);
+$course_info 		= get_post_meta(get_the_id(), 'course_info', true);
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -47,16 +49,14 @@ $course_info = get_post_meta(get_the_id(), 'course_info', true);
 		<?php endif; ?>
 			
 		<div class='course-meta clearfix'>
-			<div class='meta-title'>Season</div><div class='meta-entry'><?php the_terms( $post->ID, 'course_season', '', ', ', ' ' ); ?></div>
 			<div class='meta-title'>Course Code</div><div class='meta-entry'><?php echo $course_code; ?></div>
 			<div class='meta-title'>Tutor</div><div class='meta-entry'><a href="<?php echo $course_tutor_url; ?>"><?php echo $course_tutor; ?></a></div>
 			<div class='meta-title'>Venue</div><div class='meta-entry'><a href="<?php echo $course_venue_url; ?>"><?php echo $course_venue; ?></a></div>
-			<div class='meta-title'>Course Starts</div><div class='meta-entry'><?php echo $course_start; ?></div>
-			<?php
-			if ($course_end != $course_start) { ?>
-		    	<div class='meta-title'>Course Ends</div><div class='meta-entry'><?php echo $course_end; ?></div>
-			<?php } ?>
+			<div class='meta-title'>Course Dates</div><div class='meta-entry'><?php echo $course_start . ' - ' . $course_end; ?></div>
+			<div class='meta-title'>Sessions</div><div class='meta-entry'><?php echo $course_sessions; ?></div>
+			<div class='meta-title'>Session Length</div><div class='meta-entry'><?php echo $session_length; ?></div>
 			<div class='meta-title'>Notes</div><div class='meta-entry'><?php echo $course_info; ?></div>
+			<div class='meta-title'>Season</div><div class='meta-entry'><?php the_terms( $post->ID, 'course_season', '', ', ', ' ' ); ?></div>
 		</div><!-- end course meta -->
 
 		<div class="course-footer">

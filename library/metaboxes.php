@@ -40,13 +40,17 @@ function wea_custom_box( $post ) {
 	<br /><label for="course_tutor_url">Tutor URL</label>
 	<input type="text" id="course_tutor_url" name="course_tutor_url" size=30 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_tutor_url', true ) ); ?>">
   	<br /><label for="course_venue">Venue</label>
-	<input type="text" id="course_venue" name="course_venue" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_venue', true ) ); ?>">
+	<input type="text" id="course_venue" name="course_venue" size=30 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_venue', true ) ); ?>">
     <br /><label for="course_venue">Venue URL</label>
 	<input type="text" id="course_venue_url" name="course_venue_url" size=30 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_venue_url', true ) ); ?>">
     <br /><label for="course_start">Course Start Date (IMPORTANT - use YYYY-MM-DD format)</label>
 	<input type="text" id="course_start" name="course_start" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_start', true ) ); ?>">
     <br /><label for="course_end">Course End Date (IMPORTANT - use YYYY-MM-DD format)</label>
 	<input type="text" id="course_end" name="course_end" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_end', true ) ); ?>">
+    <br /><label for="course_sessions">Number of Sessions</label>
+	<input type="text" id="course_sessions" name="course_sessions" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_sessions', true ) ); ?>">    
+    <br /><label for="session_length">Number of Sessions</label>
+	<input type="text" id="session_length" name="session_length" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'session_length', true ) ); ?>">    
     <br /><label for="course_info">Course Information</label>
 	<input type="text" id="course_info" name="course_info" size=60 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_info', true ) ); ?>">
 	<?php
@@ -106,7 +110,15 @@ function save_wea_course_data( $post_id ) {
 		update_post_meta( $post_id, 'course_end', $course_end );
 	add_post_meta( $post_id, 'course_end_date', $course_end_date, true ) or
 		update_post_meta( $post_id, 'course_end_date', $course_end_date );
+	
+	$course_sessions = sanitize_text_field( $_POST['course_sessions'] );
+	add_post_meta( $post_id, 'course_sessions', $course_sessions, true ) or
+		update_post_meta( $post_id, 'course_sessions', $course_sessions );
 
+	$session_length = sanitize_text_field( $_POST['session_length'] );
+	add_post_meta( $post_id, 'session_length', $session_length, true ) or
+		update_post_meta( $post_id, 'session_length', $session_length );
+	
 	$course_info = sanitize_text_field( $_POST['course_info'] );
 	add_post_meta( $post_id, 'course_info', $course_info, true ) or
 		update_post_meta( $post_id, 'course_info', $course_info );
