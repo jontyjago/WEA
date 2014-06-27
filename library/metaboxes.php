@@ -35,21 +35,23 @@ function wea_custom_box( $post ) {
 ?>
 	<label for="course_code">Course Code</label>
 	<input type="text" id="course_code" name="course_code" size=8 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_code', true ) ); ?>">
+	<br /><label for="course_fee">Course Fee £</label>
+	<input type="text" id="course_fee" name="course_fee" size=5 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_fee', true ) ); ?>">
 	<br /><label for="course_tutor">Tutor</label>
-	<input type="text" id="course_tutor" name="course_tutor" size=30 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_tutor', true ) ); ?>">
-	<br /><label for="course_tutor_url">Tutor URL</label>
-	<input type="text" id="course_tutor_url" name="course_tutor_url" size=30 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_tutor_url', true ) ); ?>">
+	<input type="text" id="course_tutor" name="course_tutor" size=20 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_tutor', true ) ); ?>">
+	<label for="course_tutor_url">Tutor URL</label>
+	<input type="text" id="course_tutor_url" name="course_tutor_url" size=40 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_tutor_url', true ) ); ?>">
   	<br /><label for="course_venue">Venue</label>
-	<input type="text" id="course_venue" name="course_venue" size=30 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_venue', true ) ); ?>">
-    <br /><label for="course_venue">Venue URL</label>
-	<input type="text" id="course_venue_url" name="course_venue_url" size=30 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_venue_url', true ) ); ?>">
+	<input type="text" id="course_venue" name="course_venue" size=20 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_venue', true ) ); ?>">
+    <label for="course_venue">Venue URL</label>
+	<input type="text" id="course_venue_url" name="course_venue_url" size=40 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_venue_url', true ) ); ?>">
     <br /><label for="course_start">Course Start Date (IMPORTANT - use YYYY-MM-DD format)</label>
 	<input type="text" id="course_start" name="course_start" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_start', true ) ); ?>">
     <br /><label for="course_end">Course End Date (IMPORTANT - use YYYY-MM-DD format)</label>
 	<input type="text" id="course_end" name="course_end" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_end', true ) ); ?>">
     <br /><label for="course_sessions">Number of Sessions</label>
 	<input type="text" id="course_sessions" name="course_sessions" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_sessions', true ) ); ?>">    
-    <br /><label for="session_length">Number of Sessions</label>
+    <label for="session_length">Session Length</label>
 	<input type="text" id="session_length" name="session_length" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'session_length', true ) ); ?>">    
     <br /><label for="course_info">Course Information</label>
 	<input type="text" id="course_info" name="course_info" size=60 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_info', true ) ); ?>">
@@ -75,6 +77,10 @@ function save_wea_course_data( $post_id ) {
 	$course_code = sanitize_text_field( $_POST['course_code'] );
 	add_post_meta( $post_ID, 'course_code', $course_code, true ) or
 		update_post_meta( $post_id, 'course_code', $course_code );
+
+	$course_fee = sanitize_text_field( $_POST['course_fee'] );
+	add_post_meta( $post_ID, 'course_fee', $course_fee, true ) or
+		update_post_meta( $post_id, 'course_fee', $course_fee );
 
 	$course_tutor = sanitize_text_field( $_POST['course_tutor'] );
 	add_post_meta( $post_ID, 'course_tutor', $course_tutor, true ) or

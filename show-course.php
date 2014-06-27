@@ -9,6 +9,7 @@
 
 //Get the custom data
 $course_code 		= get_post_meta(get_the_id(), 'course_code', true);
+$course_fee 		= get_post_meta(get_the_id(), 'course_fee', true);
 $course_tutor 		= get_post_meta(get_the_id(), 'course_tutor', true);
 $course_tutor_url 	= get_post_meta(get_the_id(), 'course_tutor_url', true);
 $course_venue 		= get_post_meta(get_the_id(), 'course_venue', true);
@@ -50,9 +51,17 @@ $course_info 		= get_post_meta(get_the_id(), 'course_info', true);
 			
 		<div class='course-meta clearfix'>
 			<div class='meta-title'>Course Code</div><div class='meta-entry'><?php echo $course_code; ?></div>
+			<div class='meta-title'>Course Fee</div><div class='meta-entry'><?php echo "£" . $course_fee; ?></div>
 			<div class='meta-title'>Tutor</div><div class='meta-entry'><a href="<?php echo $course_tutor_url; ?>"><?php echo $course_tutor; ?></a></div>
 			<div class='meta-title'>Venue</div><div class='meta-entry'><a href="<?php echo $course_venue_url; ?>"><?php echo $course_venue; ?></a></div>
-			<div class='meta-title'>Course Dates</div><div class='meta-entry'><?php echo $course_start . ' - ' . $course_end; ?></div>
+			
+			<?php
+			if ($course_end != $course_start) : ?>
+		    	<div class='meta-title'>Course Dates</div><div class='meta-entry'><?php echo $course_start . ' - ' . $course_end; ?></div>
+			<?php else : ?>
+				<div class='meta-title'>Course Date</div><div class='meta-entry'><?php echo $course_start; ?></div>
+			<?php endif; ?>
+
 			<div class='meta-title'>Sessions</div><div class='meta-entry'><?php echo $course_sessions; ?></div>
 			<div class='meta-title'>Session Length</div><div class='meta-entry'><?php echo $session_length; ?></div>
 			<div class='meta-title'>Notes</div><div class='meta-entry'><?php echo $course_info; ?></div>
