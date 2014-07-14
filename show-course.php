@@ -28,7 +28,6 @@ $course_info 		= get_post_meta(get_the_id(), 'course_info', true);
 		</div>
 		<?php endif; ?>
 		<header class="entry-header">
-			<?php the_post_thumbnail(); ?>
 			<?php if ( is_single() ) : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php else : ?>
