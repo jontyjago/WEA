@@ -28,6 +28,7 @@ get_header(); ?>
    			'meta_key' => 'course_start_date',
    			'orderby' => 'meta_value_num',
    			'order' => 'ASC',
+   			'course_status' => 'current',
  		);
  		$query = new WP_Query($args);
 

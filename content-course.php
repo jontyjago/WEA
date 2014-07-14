@@ -19,6 +19,9 @@
             <div class='meta-title'>Course Notes</div><div class='meta-entry'><?php echo $course_info; ?></div>
             <div class='meta-title'>Season</div><div class='meta-entry'><?php the_terms( $post->ID, 'course_season', '', ', ', ' ' ); ?></div>
     </div><!-- end course meta -->
+    <?php if ( has_post_thumbnail()) :
+        the_post_thumbnail('thumbnail');
+    endif; ?>
     <div class="entry-content">
         <?php   if(is_single()) { 
                     the_content(); }

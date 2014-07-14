@@ -245,6 +245,11 @@ a:hover {
     background-color: #eee;
     margin-top: 12px;
 }
+.attachment-thumbnail {
+    float: left;
+    margin: 10px;
+    border: 1px solid #ccc;
+}
 .course-footer p {
     margin: 2px 0;
     line-height: 20px;
