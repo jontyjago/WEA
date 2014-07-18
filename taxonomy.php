@@ -25,9 +25,10 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 		<div id='season-viewing'>
-		<h3>You are viewing: 
-		<?php echo single_term_title(); ?>
-		</h3></div>
+			<h3> 
+				<?php echo  single_term_title() . ' Courses'; ?>
+			</h3>
+		</div>
 			
 		<?php
 			/* Start the Loop */
@@ -37,7 +38,7 @@ get_header(); ?>
 				 * this in a child theme then include a file called called content-___.php
 				 * (where ___ is the post format) and that will be used instead.
 				 */
-				get_template_part( 'content-season', get_post_format() );
+				get_template_part( 'content-course', get_post_format() );
 
 			endwhile;
 

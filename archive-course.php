@@ -49,7 +49,7 @@ get_header(); ?>
 			twentytwelve_content_nav( 'nav-below' );
 
 		else : ?>
-			<?php get_template_part( 'course', 'none' ); ?>
+			<?php get_template_part( 'all-course', 'none' ); ?>
 		<?php endif; ?>
 
 		</div><!-- #content -->

@@ -50,7 +50,9 @@ $course_info 		= get_post_meta(get_the_id(), 'course_info', true);
 			
 		<div class='course-meta clearfix'>
 			<div class='meta-title'>Course Code</div><div class='meta-entry'><?php echo $course_code; ?></div>
-			<div class='meta-title'>Course Fee</div><div class='meta-entry'><?php echo "£" . $course_fee; ?></div>
+			<?php if (strlen($course_fee) !=0) : ?>
+				<div class='meta-title'>Course Fee</div><div class='meta-entry'><?php echo '£' . $course_fee; ?></div>
+			<?php endif; ?>
 			<div class='meta-title'>Tutor</div><div class='meta-entry'><a href="<?php echo $course_tutor_url; ?>"><?php echo $course_tutor; ?></a></div>
 			<div class='meta-title'>Venue</div><div class='meta-entry'><a href="<?php echo $course_venue_url; ?>"><?php echo $course_venue; ?></a></div>
 			
