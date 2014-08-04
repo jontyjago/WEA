@@ -12,8 +12,9 @@ function wea_options_menu() {
 
 function wea_options_page() {
 	//if we got here with a POST, update the database with the new options
-	if ( $_POST['update_wea_options'] == 'true' ) { wea_options_update(); }
-	// here's the main function that will generate our options page
+	if (isset($_POST['update_wea_options'])) {
+        if ( $_POST['update_wea_options'] == 'true' ) { wea_options_update(); }
+    }
 ?>
 
 <!--Options Markup-->
