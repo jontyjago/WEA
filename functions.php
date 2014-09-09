@@ -6,5 +6,6 @@
 
 require_once( 'library/post-types.php' );
 require_once( 'library/metaboxes.php' );
+require_once( 'library/remove-menus.php' );
 require_once( 'library/taxonomies.php' );
 require_once( 'library/options.php' );

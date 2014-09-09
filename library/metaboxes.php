@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 //Course Details
 /* Define the custom box */
