@@ -44,9 +44,12 @@ get_header(); ?>
 
 			?>
 
+			<?php posts_nav_link(); ?>
+
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
+
 
 		</div><!-- #content -->
 	</section><!-- #primary -->
