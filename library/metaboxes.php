@@ -33,6 +33,23 @@ function wea_custom_box( $post ) {
 	// The actual fields for data entry
 	// Use get_post_meta to retrieve an existing value from the database and use the value for the form
 ?>
+
+	<link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+   	<!-- Call the jquery Datepicker -->
+   	<script type="text/javascript">
+   		$(function() {
+        	$("#datepicker1").datepicker({ dateFormat: "yy-mm-dd" }).val()
+       	});
+   	</script>
+   	<script type="text/javascript">
+    	$(function() {
+        	$("#datepicker2").datepicker({ dateFormat: "yy-mm-dd" }).val()
+       	});
+   	</script>
+
 	<label for="course_code">Course Code</label>
 	<input type="text" id="course_code" name="course_code" size=8 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_code', true ) ); ?>">
 	<br /><label for="course_fee">Course Fee £</label>
@@ -45,10 +62,10 @@ function wea_custom_box( $post ) {
 	<input type="text" id="course_venue" name="course_venue" size=20 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_venue', true ) ); ?>">
     <label for="course_venue">Venue URL</label>
 	<input type="text" id="course_venue_url" name="course_venue_url" size=40 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_venue_url', true ) ); ?>">
-    <br /><label for="course_start">Course Start Date (IMPORTANT - use YYYY-MM-DD format)</label>
-	<input type="text" id="course_start" name="course_start" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_start', true ) ); ?>">
-    <br /><label for="course_end">Course End Date (IMPORTANT - use YYYY-MM-DD format)</label>
-	<input type="text" id="course_end" name="course_end" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_end', true ) ); ?>">
+    <br /><label for="course_start">Course Start Date</label>
+	<input type="text" id="datepicker1" name="course_start" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_start', true ) ); ?>">
+    <br /><label for="course_end">Course End Date</label>
+	<input type="text" id="datepicker2" name="course_end" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_end', true ) ); ?>">
     <br /><label for="course_sessions">Number of Sessions</label>
 	<input type="text" id="course_sessions" name="course_sessions" size=10 value="<?php echo esc_attr( get_post_meta( get_the_id(), 'course_sessions', true ) ); ?>">    
     <label for="session_length">Session Length</label>
