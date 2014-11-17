@@ -23,13 +23,18 @@ get_header(); ?>
 		<div id="content" role="main">
 		
 		<?php
-		 $args = array(
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		$args = array(
    			'post_type' => 'course',
    			'meta_key' => 'course_start_date',
    			'orderby' => 'meta_value_num',
    			'order' => 'ASC',
    			'course_status' => 'current',
+   			//'nopaging' => 'true',
+   			'posts_per_page' => 15,
+   			'paged' => $paged,
  		);
+
  		$query = new WP_Query($args);
 
 		if ( $query -> have_posts() ) : ?>
@@ -46,7 +51,11 @@ get_header(); ?>
 
 			endwhile;
 
-			twentytwelve_content_nav( 'nav-below' );
+			// next_posts_link() usage with max_num_pages
+			next_posts_link( 'Next Page', $query->max_num_pages );
+			echo ' | ';
+			previous_posts_link( 'Previous Page' );
+			wp_reset_postdata();
 
 		else : ?>
 			<?php get_template_part( 'all-course', 'none' ); ?>

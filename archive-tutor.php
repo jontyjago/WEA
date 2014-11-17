@@ -24,10 +24,14 @@ get_header(); ?>
 		<div id="content" role="main" class="leftcol">
         <h2>Our Tutors</h2>
 
-		 <?php $args = array(
+		 <?php 
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		$args = array(
    			'post_type' => 'tutor',
    			'orderby' => 'title',
    			'order' => 'ASC',
+   			'posts_per_page' => 15,
+   			'paged' => $paged,
  		);
  		$query = new WP_Query($args);
 
@@ -43,7 +47,11 @@ get_header(); ?>
 
 			endwhile;
 
-			twentytwelve_content_nav( 'nav-below' );
+			// next_posts_link() usage with max_num_pages
+			next_posts_link( 'Next Page', $query->max_num_pages );
+			echo ' | ';
+			previous_posts_link( 'Previous Page' );
+			wp_reset_postdata();
 
 		else : ?>
 			<?php get_template_part( 'tutor', 'none' ); ?>
