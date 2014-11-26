@@ -24,14 +24,15 @@ get_header(); ?>
 		
 		<?php
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		$page_limit == stripslashes(get_option('course-limit'));
+		
 		$args = array(
    			'post_type' => 'course',
    			'meta_key' => 'course_start_date',
    			'orderby' => 'meta_value_num',
    			'order' => 'ASC',
    			'course_status' => 'current',
-   			//'nopaging' => 'true',
-   			'posts_per_page' => 15,
+   			'posts_per_page' => $page_limit,
    			'paged' => $paged,
  		);
 

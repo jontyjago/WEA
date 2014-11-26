@@ -20,23 +20,22 @@
 get_header(); ?>
 
 	<section id="primary" class="site-content">
-	
-		<div id="content" role="main" class="leftcol">
-        <h2>Our Tutors</h2>
+		<div id="content" role="main">
 
-		<?php 
+		<?php
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-		$page_limit = stripslashes(get_option('tutor-limit'));
-		$args = array(
-   			'post_type' => 'tutor',
-   			'orderby' => 'title',
-   			'order' => 'ASC',
-   			'posts_per_page' => $page_limit,
-   			'paged' => $paged,
- 		);
- 		$query = new WP_Query($args);
+		$args = array();
 
-		if ( $query -> have_posts() ) : 
+ 		$query = new WP_Query($args);
+		if ( $query -> have_posts ) : ?>
+
+		<div id='season-viewing'>
+			<h3> 
+				<?php echo  single_term_title() . ' Courses'; ?>
+			</h3>
+		</div>
+			
+		<?php
 			/* Start the Loop */
 			while ( $query -> have_posts() ) : $query -> the_post();
 
@@ -44,19 +43,21 @@ get_header(); ?>
 				 * this in a child theme then include a file called called content-___.php
 				 * (where ___ is the post format) and that will be used instead.
 				 */
-				get_template_part( 'content-tutor', get_post_format() );
+				get_template_part( 'content-course', get_post_format() );
 
 			endwhile;
-
-			// next_posts_link() usage with max_num_pages
+						// next_posts_link() usage with max_num_pages
 			next_posts_link( 'Next Page', $query->max_num_pages );
 			echo ' | ';
 			previous_posts_link( 'Previous Page' );
 			wp_reset_postdata();
 
-		else : ?>
-			<?php get_template_part( 'tutor', 'none' ); ?>
+			?>
+
+		<?php else : ?>
+			<?php get_template_part( 'course', 'none' ); ?>
 		<?php endif; ?>
+
 
 		</div><!-- #content -->
 	</section><!-- #primary -->

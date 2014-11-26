@@ -22,9 +22,22 @@ get_header(); ?>
 	<section id="primary" class="site-content">
 		<div id="content" role="main">
         <h2>Our Venues</h2>
-		<?php if ( have_posts() ) : 
+
+		<?php 
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		$page_limit = stripslashes(get_option('venue-limit'));
+		$args = array(
+   			'post_type' => 'venue',
+   			'orderby' => 'title',
+   			'order' => 'ASC',
+   			'posts_per_page' => $page_limit,
+   			'paged' => $paged,
+ 		);
+ 		$query = new WP_Query($args);
+
+		if ( $query -> have_posts() ) : 
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			while ( $query -> have_posts() ) : $query -> the_post();
 
 				/* Include the post format-specific template for the content. If you want to
 				 * this in a child theme then include a file called called content-___.php
@@ -34,7 +47,11 @@ get_header(); ?>
 
 			endwhile;
 
-			twentytwelve_content_nav( 'nav-below' );
+			// next_posts_link() usage with max_num_pages
+			next_posts_link( 'Next Page', $query->max_num_pages );
+			echo ' | ';
+			previous_posts_link( 'Previous Page' );
+			wp_reset_postdata();
 
 		else : ?>
 			<?php get_template_part( 'venue', 'none' ); ?>

@@ -30,8 +30,8 @@ function wea_options_page() {
         <h3>Homepage Text</h3>
         <p>These options allow you to customise the titles and text you see on the homepage.</p>
         <p><input type="text" name="intro-title" id="intro-title" size="48" value="<?php esc_attr_e( get_option( 'intro-title' ) ); ?>"/> Homepage Title</p>
-        <p><textarea name="intro-text" id="intro-text" cols=36 rows=6><?php esc_attr_e( get_option( 'intro-text' ) ); ?></textarea> Homepage Text - Use &lt;br /&gt; for line breaks, the &lt;p&gt; tag could break the layout.</p>
-        <p><textarea name="stop-press" id="stop-press" cols=36 rows=6><?php esc_attr_e( get_option( 'stop-press' ) ); ?></textarea> Stop Press Text - Use &lt;br /&gt; for line breaks, the &lt;p&gt; tag could break the layout.</p>
+        <p><textarea name="intro-text" id="intro-text" cols=72 rows=6><?php esc_attr_e( get_option( 'intro-text' ) ); ?></textarea> Homepage Text - Use &lt;br /&gt; for line breaks, the &lt;p&gt; tag could break the layout.</p>
+        <p><textarea name="stop-press" id="stop-press" cols=72 rows=6><?php esc_attr_e( get_option( 'stop-press' ) ); ?></textarea> Stop Press Text - Use &lt;br /&gt; for line breaks, the &lt;p&gt; tag could break the layout.</p>
         <h3>Contact Details</h3>
         <p>These details will be displayed on both the header and footer of every page.</p>
         <p><input type="text" name="wea-phone" id="wea-phone" size="24" value="<?php esc_attr_e( get_option( 'wea-phone' ) ); ?>"/> Contact Phone Number</p>
@@ -39,10 +39,18 @@ function wea_options_page() {
         <p><input type="text" name="wea-email" id="wea-email" size="24" value="<?php esc_attr_e( get_option( 'wea-email' ) ); ?>"/> Email Address</p>
         <h3>Front Page Quick Link Text</h3>
         <p>These options allow you to customise the text on the 4 Quick Link boxes on the home page.</p>
-        <p><input type="text" name="courses-text" id="courses-text" size="48" value="<?php esc_attr_e( get_option( 'courses-text' ) ); ?>"/> Courses</p>
-        <p><input type="text" name="contact-text" id="contact-text" size="48" value="<?php esc_attr_e( get_option( 'contact-text' ) ); ?>"/> Contact</p>
-        <p><input type="text" name="tutor-text" id="tutor-text" size="48" value="<?php esc_attr_e( get_option( 'tutor-text' ) ); ?>"/> Tutor</p>
-        <p><input type="text" name="venue-text" id="venue-text" size="48" value="<?php esc_attr_e( get_option( 'venue-text' ) ); ?>"/> Venue</p>
+        <p><input type="text" name="courses-text" id="courses-text" size="64" value="<?php esc_attr_e( get_option( 'courses-text' ) ); ?>"/> Courses</p>
+        <p><input type="text" name="contact-text" id="contact-text" size="64" value="<?php esc_attr_e( get_option( 'contact-text' ) ); ?>"/> Contact</p>
+        <p><input type="text" name="tutor-text" id="tutor-text" size="64" value="<?php esc_attr_e( get_option( 'tutor-text' ) ); ?>"/> Tutor</p>
+        <p><input type="text" name="venue-text" id="venue-text" size="64" value="<?php esc_attr_e( get_option( 'venue-text' ) ); ?>"/> Venue</p>
+        
+        <h3>Pagination Limits</h3>
+        <p>Set the number of records you wish to display on each page</p>
+        <p><input type="text" name="course-limit" id="course-limit" size="10" value="<?php esc_attr_e( get_option( 'course-limit' ) ); ?>"/> Course Limit</p>
+        <p><input type="text" name="tutor-limit" id="tutor-limit" size="10" value="<?php esc_attr_e( get_option( 'tutor-limit' ) ); ?>"/> Tutor Limit</p>
+        <p><input type="text" name="venue-limit" id="venue-limit" size="10" value="<?php esc_attr_e( get_option( 'venue-limit' ) ); ?>"/> Venue Limit</p>
+
+
         <!-- submit button -->
         <p><input type="submit" name="search" value="Update Options" class="button" /></p>
     </form>
@@ -63,6 +71,9 @@ function wea_options_update() {
 	update_option( 'contact-text', $_POST['contact-text'] );
 	update_option( 'tutor-text', $_POST['tutor-text'] );
 	update_option( 'venue-text', $_POST['venue-text'] );
+    update_option( 'course-limit', $_POST['course-limit'] );
+    update_option( 'tutor-limit', $_POST['tutor-limit'] );
+    update_option( 'venue-limit', $_POST['venue-limit'] );
 }
 //Google fonts into header
 
