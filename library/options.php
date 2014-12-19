@@ -26,29 +26,29 @@ function wea_options_page() {
         <input type="hidden" name="update_wea_options" value="true" />
         <h3>Organisation Name</h3>
         <p>The name of your organisation is shown in the header and footer, for example in the copyright.</p>
-        <p><input type="text" name="org-name" id="org-name" size="30" value="<?php esc_attr_e( get_option( 'org-name' ) ); ?>"/> Your organisation eg WEA Dorchester</p>
+        <p><input type="text" name="org-name" id="org-name" size="30" value="<?php esc_attr_e( get_option( 'org-name' ) ); ?>" required /> Your organisation eg WEA Dorchester</p>
         <h3>Homepage Text</h3>
         <p>These options allow you to customise the titles and text you see on the homepage.</p>
-        <p><input type="text" name="intro-title" id="intro-title" size="48" value="<?php esc_attr_e( get_option( 'intro-title' ) ); ?>"/> Homepage Title</p>
+        <p><input type="text" name="intro-title" id="intro-title" size="48" value="<?php esc_attr_e( get_option( 'intro-title' ) ); ?>" required /> Homepage Title</p>
         <p><textarea name="intro-text" id="intro-text" cols=72 rows=6><?php esc_attr_e( get_option( 'intro-text' ) ); ?></textarea> Homepage Text - Use &lt;br /&gt; for line breaks, the &lt;p&gt; tag could break the layout.</p>
         <p><textarea name="stop-press" id="stop-press" cols=72 rows=6><?php esc_attr_e( get_option( 'stop-press' ) ); ?></textarea> Stop Press Text - Use &lt;br /&gt; for line breaks, the &lt;p&gt; tag could break the layout.</p>
         <h3>Contact Details</h3>
         <p>These details will be displayed on both the header and footer of every page.</p>
-        <p><input type="text" name="wea-phone" id="wea-phone" size="24" value="<?php esc_attr_e( get_option( 'wea-phone' ) ); ?>"/> Contact Phone Number</p>
-        <p><input type="text" name="regional-phone" id="regional-phone" size="24" value="<?php esc_attr_e( get_option( 'regional-phone' ) ); ?>"/> Regional Office Phone Number (optional)</p>
-        <p><input type="text" name="wea-email" id="wea-email" size="24" value="<?php esc_attr_e( get_option( 'wea-email' ) ); ?>"/> Email Address</p>
+        <p><input type="text" name="wea-phone" id="wea-phone" size="24" value="<?php esc_attr_e( get_option( 'wea-phone' ) ); ?>" required /> Contact Phone Number</p>
+        <p><input type="text" name="regional-phone" id="regional-phone" size="24" value="<?php esc_attr_e( get_option( 'regional-phone' ) ); ?>" /> Regional Office Phone Number (optional)</p>
+        <p><input type="email" name="wea-email" id="wea-email" size="24" value="<?php esc_attr_e( get_option( 'wea-email' ) ); ?>" required /> Email Address</p>
         <h3>Front Page Quick Link Text</h3>
         <p>These options allow you to customise the text on the 4 Quick Link boxes on the home page.</p>
-        <p><input type="text" name="courses-text" id="courses-text" size="64" value="<?php esc_attr_e( get_option( 'courses-text' ) ); ?>"/> Courses</p>
-        <p><input type="text" name="contact-text" id="contact-text" size="64" value="<?php esc_attr_e( get_option( 'contact-text' ) ); ?>"/> Contact</p>
-        <p><input type="text" name="tutor-text" id="tutor-text" size="64" value="<?php esc_attr_e( get_option( 'tutor-text' ) ); ?>"/> Tutor</p>
-        <p><input type="text" name="venue-text" id="venue-text" size="64" value="<?php esc_attr_e( get_option( 'venue-text' ) ); ?>"/> Venue</p>
+        <p><input type="text" name="courses-text" id="courses-text" size="64" value="<?php esc_attr_e( get_option( 'courses-text' ) ); ?>" required /> Courses</p>
+        <p><input type="text" name="contact-text" id="contact-text" size="64" value="<?php esc_attr_e( get_option( 'contact-text' ) ); ?>" required /> Contact</p>
+        <p><input type="text" name="tutor-text" id="tutor-text" size="64" value="<?php esc_attr_e( get_option( 'tutor-text' ) ); ?>" required /> Tutor</p>
+        <p><input type="text" name="venue-text" id="venue-text" size="64" value="<?php esc_attr_e( get_option( 'venue-text' ) ); ?>" required /> Venue</p>
         
         <h3>Pagination Limits</h3>
         <p>Set the number of records you wish to display on each page</p>
-        <p><input type="text" name="course-limit" id="course-limit" size="10" value="<?php esc_attr_e( get_option( 'course-limit' ) ); ?>"/> Course Limit</p>
-        <p><input type="text" name="tutor-limit" id="tutor-limit" size="10" value="<?php esc_attr_e( get_option( 'tutor-limit' ) ); ?>"/> Tutor Limit</p>
-        <p><input type="text" name="venue-limit" id="venue-limit" size="10" value="<?php esc_attr_e( get_option( 'venue-limit' ) ); ?>"/> Venue Limit</p>
+        <p><input type="number" name="course-limit" id="course-limit" size="5" value="<?php esc_attr_e( get_option( 'course-limit' ) ); ?>" required /> Course Limit</p>
+        <p><input type="number" name="tutor-limit" id="tutor-limit" size="5" value="<?php esc_attr_e( get_option( 'tutor-limit' ) ); ?>" required /> Tutor Limit</p>
+        <p><input type="number" name="venue-limit" id="venue-limit" size="5" value="<?php esc_attr_e( get_option( 'venue-limit' ) ); ?>" required /> Venue Limit</p>
 
 
         <!-- submit button -->
