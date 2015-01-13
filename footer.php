@@ -43,7 +43,7 @@ if ( strlen( get_option( 'regional-phone' ) )!=0 ) {?> <p>Regional Phone: <?php 
 	    <div class="one-fourth last">
 	    <div class="copy">
 	        <p>The WEA is a registered charity; Number 1112775</p>
-	    <p>&copy; <?php echo stripslashes( get_option( 'org-name' ) ); ?> 2013</p>
+	    <p>&copy; <?php echo stripslashes( get_option( 'org-name' ) ); ?> <?php echo date("Y"); ?></p>
 	    <?php if ( is_home() ) { ?>
 	        <p>Photo courtesy of West Dorset District Council</p>
 	    <?php } ?>
